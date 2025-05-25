@@ -1,272 +1,1022 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2PJE4E46EJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2PJE4E46EJ');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raed Affes - Professional Profile</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Raed Affes | Software Engineering Student</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(44, 62, 80, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .container {
+            width enmities: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff; /* White for Raed Affes */
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Section Hero */
+        .hero {
+            padding-top: 8rem;
+            padding-bottom: 5rem;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('/api/placeholder/1920/1080') center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            object-fit: cover;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: var(--light);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+            color: var(--accent); /* Red icons */
+        }
+        
+        .social-icon:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Section About */
+        .about {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .about-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .info-item {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-item i {
+            margin-right: 0.5rem;
+            color: var(--accent); /* Red icons */
+        }
+        
+        .info-item span {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* Section Education */
+        .education {
+            padding: 5rem 0;
+            background-color: #f9f9f9;
+        }
+        
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .education-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            padding: 1.5rem;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .education-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        /* Section Certifications */
+        .certifications {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .certification-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            padding: 1.5rem;
+        }
+        
+        .certification-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .certification-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        /* Section Projects */
+        .projects {
+            padding: 5rem 0;
+            background-color: #f9f9f9;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            padding: 1.5rem;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        /* Section Tech Stack */
+        .tech-stack {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        
+        .tech-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            padding: 1rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tech-card i {
+            margin-right: 0.5rem;
+            color: var(--accent); /* Red icons */
+        }
+        
+        /* Section Activities */
+        .activities {
+            padding: 5rem 0;
+            background-color: #f9f9f9;
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .activity-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            padding: 1.5rem;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .activity-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        /* Section Languages */
+        .languages {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .language-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .language-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Section Contact */
+        .contact {
+            padding: 5rem 0;
+            background-color: #f9f9f9;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            margin-right: 1rem;
+            min-width: 20px;
+            color: var(--accent); /* Red icons */
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .btn-submit {
+            background-color: var(--primary);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-submit:hover {
+            background-color: #1e2d3d;
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links li {
+            margin: 0 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-social {
+            margin-bottom: 1.5rem;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive */
+        @media screen and (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                right: 0;
+                top: 100%;
+                background-color: var(--primary);
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+                opacity: 0;
+                pointer-events: none;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+            
+            .nav-links li {
+                margin: 0;
+                padding: 1rem;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hamburger.active div:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 6px);
+            }
+            
+            .hamburger.active div:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active div:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -6px);
+            }
+            
+            .about-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="background-animation"></div>
-    
-    <div class="container">
-        <header class="header">
-            <img src="photo.jpg" alt="Raed Affes" class="profile-img">
-            <h1 class="name">Raed Affes</h1>
-            <h2 class="title">Computer Science Student & Creative Enthusiast</h2>
-            <p class="bio">Creative passionate about technological innovation and design. Currently a student at the National School of Computer Science (ENSI), I'm developing my computer science skills while exploring my passion for graphic design and multimedia editing.</p>
-            
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/raed-affes-236b73326" target="_blank" class="social-link">
-                    <i class="fab fa-linkedin social-icon"></i>
-                    LinkedIn
-                </a>
-                <a href="https://www.facebook.com/raed.affes/about" target="_blank" class="social-link">
-                    <i class="fab fa-facebook social-icon"></i>
-                    Facebook
-                </a>
-                <a href="https://www.instagram.com/raed.affes/" target="_blank" class="social-link">
-                    <i class="fab fa-instagram social-icon"></i>
-                    Instagram
-                </a>
-                <a href="https://github.com/RaedAffes" target="_blank" class="social-link">
-                    <i class="fab fa-github social-icon"></i>
-                    GitHub
-                </a>
-            </div>
-        </header>
-        
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#about-section">About</a></li>
-                <li><a href="#skills-section">Skills</a></li>
-                <li><a href="#education-section">Education</a></li>
-                <li><a href="#languages-section">Languages</a></li>
-                <li><a href="#interests-section">Interests</a></li>
-                <li><a href="#contact-section">Contact</a></li>
-            </ul>
-        </nav>
-        
-        <section class="section" id="about-section">
-            <h2 class="section-title">About Me</h2>
-            <div class="section-content">
-                <p>
-                    Born on May 8, 2003 in Sfax, Tunisia, I am a dynamic young student who combines academic rigor with artistic creativity. Passionate about the digital world, I am particularly interested in the fields of computer science, graphic design, and audiovisual editing.
-                </p>
-                <p style="margin-top: 15px;">
-                    My academic background in computer science allows me to develop a unique vision at the intersection of technology and design, preparing me to meet the challenges of innovation in the digital sector.
-                </p>
-            </div>
-        </section>
-        
-        <section class="section" id="skills-section">
-            <h2 class="section-title">Skills</h2>
-            <div class="skill-container">
-                <div class="skill">Photo Editing</div>
-                <div class="skill">Video Editing</div>
-                <div class="skill">Graphic Design</div>
-                <div class="skill">Computer Science</div>
-                <div class="skill">Problem Solving</div>
-                <div class="skill">Creativity</div>
-                <div class="skill">Communication</div>
-            </div>
-            
-            <div class="progress-bars">
-                <div class="progress-item">
-                    <span class="progress-title">Photo Editing</span>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 85%;" data-value="85%"></div>
-                    </div>
-                </div>
-                <div class="progress-item">
-                    <span class="progress-title">Video Editing</span>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 80%;" data-value="80%"></div>
-                    </div>
-                </div>
-                <div class="progress-item">
-                    <span class="progress-title">Graphic Design</span>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 75%;" data-value="75%"></div>
-                    </div>
-                </div>
-                <div class="progress-item">
-                    <span class="progress-title">Computer Science</span>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 70%;" data-value="70%"></div>
-                    </div>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="navbar">
+                <a href="#" class="logo">Raed<span>Affes</span></a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#tech-stack">Tech Stack</a></li>
+                    <li><a href="#activities">Activities</a></li>
+                    <li><a href="#languages">Languages</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
             </div>
-        </section>
-        
-        <section class="section" id="education-section">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="education-title">National School of Computer Science (ENSI)</h3>
-                        <p class="education-date">2024 - Present</p>
-                        <p class="education-details">Admitted to the National School of Computer Science following the entrance exam for engineering schools</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="education-title">Baccalaureate in Mathematics</h3>
-                        <p class="education-date">2022</p>
-                        <p class="education-details">Obtained with honors</p>
-                    </div>
+        </div>
+    </header>
+
+    <!-- Section Hero -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="photo.jpg" alt="Raed Affes" class="profile-image">
+                <h1>Raed Affes</h1>
+                <h2>Software Engineering Student</h2>
+                <p>Passionate computer science student at ENSI, dedicated to creating innovative software solutions.</p>
+                <a href="#contact" class="btn">Contact Me</a>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/raed-affes/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/RaedAffes" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="mailto:raed.affes@ensi-uma.tn" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+21697924400" class="social-icon"><i class="fas fa-phone"></i></a>
                 </div>
             </div>
-        </section>
-        
-        <section class="section" id="languages-section">
-            <h2 class="section-title">Languages</h2>
-            <div class="languages-container">
-                <div class="language-item">
-                    <span class="language-name">French</span>
-                    <div class="language-level">
-                        <div class="level-bar" style="width: 70%;"></div>
-                    </div>
-                    <span>Intermediate level</span>
-                </div>
-                <div class="language-item">
-                    <span class="language-name">English</span>
-                    <div class="language-level">
-                        <div class="level-bar" style="width: 70%;"></div>
-                    </div>
-                    <span>Intermediate level</span>
-                </div>
-                <div class="language-item">
-                    <span class="language-name">Arabic</span>
-                    <div class="language-level">
-                        <div class="level-bar" style="width: 100%;"></div>
-                    </div>
-                    <span>Native language</span>
-                </div>
+        </div>
+    </section>
+
+    <!-- Section About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
             </div>
-        </section>
-        
-        <section class="section" id="interests-section">
-            <h2 class="section-title">Interests</h2>
-            <div class="interests-container">
-                <div class="interest-item">
-                    <i class="fas fa-basketball-ball interest-icon"></i>
-                    <p>Basketball</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Computer Science Student Dedicated to Innovation</h3>
+                    <p>I am Raed Affes, a first-year engineering student at the National School of Computer Science (ENSI). Passionate about programming and problem-solving, I strive to develop software solutions that address real-world challenges. My goal is to contribute to impactful projects using modern technologies and collaborative approaches.</p>
+                    <a href="RaedCV.pdf" class="btn" download><i class="fas fa-download"></i> Download CV</a>
                 </div>
-                <div class="interest-item">
-                    <i class="fas fa-book interest-icon"></i>
-                    <p>Reading</p>
-                </div>
-                <div class="interest-item">
-                    <i class="fas fa-theater-masks interest-icon"></i>
-                    <p>Theater</p>
-                </div>
-                <div class="interest-item">
-                    <i class="fas fa-laptop-code interest-icon"></i>
-                    <p>Computer Science</p>
-                </div>
-                <div class="interest-item">
-                    <i class="fas fa-palette interest-icon"></i>
-                    <p>Design</p>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section" id="contact-section">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">
+                <div class="about-info">
+                    <div class="info-item">
+                        <i class="fas fa-user"></i>
+                        <span>Name:</span> Raed Affes
+                    </div>
+                    <div class="info-item">
                         <i class="fas fa-envelope"></i>
+                        <span>Email:</span> <a href="mailto:raed.affes@ensi-uma.tn">raed.affes@ensi-uma.tn</a>
                     </div>
-                    <span class="contact-text">raedffes@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
+                    <div class="info-item">
                         <i class="fas fa-phone"></i>
+                        <span>Phone:</span> +21697924400
                     </div>
-                    <span class="contact-text">(+216) 97924400</span>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
+                    <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
+                        <span>Address:</span> Sfax, Tunisia
                     </div>
-                    <span class="contact-text">3062 Gremda, Sfax, Tunisia</span>
+                    <div class="info-item">
+                        <i class="fas fa-globe"></i>
+                        <span>Website:</span> <a href="https://raedaffes.github.io">raedaffes.github.io</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn:</span> <a href="https://www.linkedin.com/in/raed-affes/">Raed Affes</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub:</span> <a href="https://github.com/RaedAffes">Raed Affes</a>
+                    </div>
                 </div>
             </div>
-            
-            <div class="contact-form-container">
-                <h3>Send Me a Message</h3>
-                <form id="contactForm" action="contact.php" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send</button>
-                </form>
-                <div id="formStatus"></div>
+        </div>
+    </section>
+
+    <!-- Section Education -->
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
             </div>
-        </section>
-        
-        <footer>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>National School of Computer Science (ENSI)</h3>
+                    <p>First-year Engineering Student • 2024 - Present • Tunis, Manouba</p>
+                </div>
+                <div class="education-card">
+                    <h3>Preparatory Classes, Faculty of Sciences of Sfax</h3>
+                    <p>Major: Mathematics and Physics • 2022 - 2024 • Sfax, Tunisia</p>
+                </div>
+                <div class="education-card">
+                    <h3>Habib Thameur High School</h3>
+                    <p>Mathematics Baccalaureate, With Honors • 2022 • Sfax, Tunisia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Certifications -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications</h2>
+            </div>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <h3>AWS – Introduction to Cloud</h3>
+                    <p>Basics of cloud computing, deployment models, and AWS services.</p>
+                </div>
+                <div class="certification-card">
+                    <h3>GitHub – GitHub Foundation</h3>
+                    <p>Git & GitHub Basics – Understanding version control and repository management.</p>
+                </div>
+                <div class="certification-card">
+                    <h3>LinkedIn Learning – Cybersecurity</h3>
+                    <p>Understanding the fundamentals of threat detection and management.</p>
+                </div>
+                <div class="certification-card">
+                    <h3>LinkedIn Learning – Project Management</h3>
+                    <p>Basics of planning, execution, and team coordination in software projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projects -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>E-commerce Website</h3>
+                    <p>ensitek – Your partner for all IT hardware and service needs. Technologies: HTML, CSS, JavaScript, PHP.</p>
+                    <a href="https://ensitek.github.io">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>App Deployment with GitHub Actions</h3>
+                    <p>Automated deployment pipeline using GitHub Actions (CI/CD). Technologies: Python, GitHub Actions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Tech Stack -->
+    <section id="tech-stack" class="tech-stack">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Skills</h2>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card"><i class="fab fa-python"></i>Python</div>
+                <div class="tech-card"><i class="fas fa-code"></i>C/C++</div>
+                <div class="tech-card"><i class="fab fa-java"></i>Java</div>
+                <div class="tech-card"><i class="fas fa-database"></i>MySQL</div>
+                <div class="tech-card"><i class="fab fa-git-alt"></i>Git</div>
+                <div class="tech-card"><i class="fab fa-github"></i>GitHub Actions</div>
+                <div class="tech-card"><i class="fas fa-code-branch"></i>VSCode</div>
+                <div class="tech-card"><i class="fab fa-docker"></i>Docker</div>
+                <div class="tech-card"><i class="fab fa-windows"></i>Windows</div>
+                <div class="tech-card"><i class="fab fa-linux"></i>Linux</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Activities -->
+    <section id="activities" class="activities">
+        <div class="container">
+            <div class="section-title">
+                <h2>Activities</h2>
+            </div>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <h3>ENSI Competitive Programming Club (ECPC)</h3>
+                    <p>2024 - Present</p>
+                </div>
+                <div class="activity-card">
+                    <h3>ENSI Robotics Association</h3>
+                    <p>2024 - Present</p>
+                </div>
+                <div class="activity-card">
+                    <h3>LeetCode</h3>
+                    <p>Solved 50+ problems</p>
+                </div>
+                <div class="activity-card">
+                    <h3>CodeForces</h3>
+                    <p>Solved 25+ problems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Languages -->
+    <section id="languages" class="languages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Languages</h2>
+            </div>
+            <div class="languages-grid">
+                <div class="language-card">
+                    <h3>Arabic</h3>
+                    <p>Native</p>
+                </div>
+                <div class="language-card">
+                    <h3>English</h3>
+                    <p>Fluent</p>
+                </div>
+                <div class="language-card">
+                    <h3>French</h3>
+                    <p>Fluent</p>
+                </div>
+                <div class="language-card">
+                    <h3>Spanish</h3>
+                    <p>Beginner</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p><a href="mailto:raed.affes@ensi-uma.tn">raed.affes@ensi-uma.tn</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+21697924400">+21697924400</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Address</h4>
+                            <p>Sfax, Tunisia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Website</h4>
+                            <p><a href="https://raedaffes.github.io">raedaffes.github.io</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/raed-affes/">Raed Affes</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/RaedAffes">Raed Affes</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Raed Affes</h3>
-                    <p>Computer Science Student & Creative Enthusiast</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#about-section">About</a></li>
-                        <li><a href="#skills-section">Skills</a></li>
-                        <li><a href="#education-section">Education</a></li>
-                        <li><a href="#contact-section">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>Email: raedffes@gmail.com</p>
-                    <p>Phone: (+216) 97924400</p>
-                </div>
+                <h3>Raed Affes</h3>
+                <p>Computer Science student dedicated to technological innovation</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> Raed Affes. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#tech-stack">Tech Stack</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#languages">Languages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/raed-affes/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/RaedAffes" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="mailto:raed.affes@ensi-uma.tn" class="social-icon"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+21697924400" class="social-icon"><i class="fas fa-phone"></i></a>
             </div>
-        </footer>
-    </div>
-    
-    <div class="theme-switch">
-        <i class="fas fa-moon" id="theme-toggle"></i>
-    </div>
-    
-    <div class="scroll-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-    
-    <script src="script.js"></script>
+            <div class="copyright">
+                © 2025 Raed Affes. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Scroll effect for header
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.getElementById('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
